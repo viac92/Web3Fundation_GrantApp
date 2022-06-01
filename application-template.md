@@ -104,7 +104,7 @@ All our devs (and our designers) are professionals and also very committed to le
 - William ( https://github.com/Crypto-One-dev )
 
 
-### Team LinkedIn Profiles (if available)
+### Team LinkedIn Profiles
 
 - Angela (https://www.linkedin.com/in/angela-griggio-30a6a0182/)
 - Ahmed (http://www.ahmedabdelal.com/ -Personal Website-)
@@ -125,7 +125,7 @@ In total our team has already developed around ≈2K lines of code of smart cont
 Regarding anyone in the Web3 foundation (and/or Parity Technologies) that we spoke with about our intended development with substrate we had: some technical email and email exchange with Gavin Wood, casual technical conversation with Richard Casey in a Dublin blockchain event, some calls (including technical explanations) with Rohan Joseph and Surag Sheth. One technical call with Justin Frevert. A long technical chat in person with Dan Shields at the MIT Bitcoin Expo 2022. A call with Santiago Balaguer.
 
 
-## Development Roadmap :nut_and_bolt:
+## Development Roadmap
 
 This section should break the development roadmap down into milestones and deliverables. To assist you in defining it, we have created a document with examples for some grant categories [here](../docs/grant_guidelines_per_category.md). Since these will be part of the agreement, it helps to describe _the functionality we should expect in as much detail as possible_, plus how we can verify and test that functionality. Whenever milestones are delivered, we refer to this document to ensure that everything has been delivered as expected.
 
