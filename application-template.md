@@ -127,27 +127,11 @@ Regarding anyone in the Web3 foundation (and/or Parity Technologies) that we spo
 
 ## Development Roadmap
 
-This section should break the development roadmap down into milestones and deliverables. To assist you in defining it, we have created a document with examples for some grant categories [here](../docs/grant_guidelines_per_category.md). Since these will be part of the agreement, it helps to describe _the functionality we should expect in as much detail as possible_, plus how we can verify and test that functionality. Whenever milestones are delivered, we refer to this document to ensure that everything has been delivered as expected.
-
-Below we provide an **example roadmap**. In the descriptions, it should be clear how your project is related to Substrate, Kusama or Polkadot. We _recommend_ that teams structure their roadmap as 1 milestone ≈ 1 month.
-
-For each milestone,
-
-- make sure to include a specification of your software. _Treat it as a contract_; the level of detail must be enough to later verify that the software meets the specification.
-- include the amount of funding requested _per milestone_.
-- include documentation (tutorials, API specifications, architecture diagrams, whatever is appropriate) in each milestone. This ensures that the code can be widely used by the community.
-- provide a test suite, comprising unit and integration tests, along with a guide on how to set up and run them.
-- commit to providing Dockerfiles for the delivery of your project.
-- indicate milestone duration as well as number of full-time employees working on each milestone.
-- **Deliverables 0a-0d are mandatory for all milestones**, and deliverable 0e at least for the last one. If you do not intend to deliver one of these, please state a reason in its specification (e.g. Milestone X is research oriented and as such there is no code to test).
-
-> :zap: If any of your deliverables is based on somebody else's work, make sure you work and publish _under the terms of the license_ of the respective project and that you **highlight this fact in your milestone documentation** and in the source code if applicable! **Teams that submit others' work without attributing it will be immediately terminated.**
-
 ### Overview
 
-- **Total Estimated Duration:** Duration of the whole project (e.g. 2 months)
-- **Full-Time Equivalent (FTE):**  Average number of full-time employees working on the project throughout its duration (see [Wikipedia](https://en.wikipedia.org/wiki/Full-time_equivalent), e.g. 2 FTE)
-- **Total Costs:** Requested amount in USD for the whole project (e.g. 12,000 USD). Note that the acceptance criteria and additional benefits vary depending on the [level](../README.md#level_slider-levels) of funding requested. This and the costs for each milestone need to be provided in USD; if the grant is paid out in Bitcoin, the amount will be calculated according to the exchange rate at the time of payment.
+- **Total Estimated Duration:** 4 months
+- **Full-Time Equivalent (FTE):**  2
+- **Total Costs:** 40,000 USD
 
 ### Milestone 1 Example — Implement the randomized substrate pallet ```pallet_random_node_selector```
 
@@ -158,11 +142,11 @@ For each milestone,
 | Number | Deliverable | Specification |
 | -----: | ----------- | ------------- |
 | 0a. | License | GPLv3 |
-| 0b. | Documentation | We will provide both **inline documentation** of the code and an API |
+| 0b. | Documentation | We will provide both **inline documentation** of the code and an API specifications |
 | 0c. | Testing Guide | Core functions will be fully covered by unit tests to ensure functionality and robustness. In the guide, we will describe how to run these tests. |
 | 0d. | Docker | We will provide a Dockerfile(s) that can be used to test all the functionality delivered with this milestone. |
 | 0e. | Article | We will publish an **article** on Medium that explains how we develop the pallet |
-| 1. | Substrate pallet | We will create a ```pallet_random_node_selector``` that implement the randomized selection of the nodes for the fast blockchain using the Substrate Randomness trait|  
+| 1. | Substrate pallet | We will create a ```pallet_random_node_selector``` that implement the randomized selection of the nodes for the fast blockchain using the Substrate Randomness trait |  
 
 
 ### Milestone 2 Example — Connection with of the two blockchain
@@ -178,7 +162,23 @@ For each milestone,
 | 0c. | Testing Guide | Core functions will be fully covered by unit tests to ensure functionality and robustness. In the guide, we will describe how to run these tests. |
 | 0d. | Docker | We will provide a Dockerfile(s) that can be used to test all the functionality delivered with this milestone. |
 | 0e. | Article | We will publish an **article** on Medium that explains how we develop this step |
-| 1. | RPC Method | We will create a custom RPC to call from the fast blockchain the result of the random selection of the nodes |  
+| 1. | RPC Method (Random Selector) | We will create a custom RPC method to call from the fast blockchain the result of the random selection of the nodes |
+| 2. | RPC Method (Blockchain status) | We will create a set of custom RPC method to check the status of the two blockchain (e.g. if a node on the fast blockchain is reliable) |
+
+### Milestone 2 Example — Connection with of the two blockchain
+
+- **Estimated Duration:** 2 months
+- **FTE:**  2
+- **Costs:** 20,000 USD
+
+| Number | Deliverable | Specification |
+| -----: | ----------- | ------------- |
+| 0a. | License | GPLv3 |
+| 0b. | Documentation | We will provide both **inline documentation** of the code and and an documentation of the infrastructure |
+| 0c. | Testing Guide | Core functions will be fully covered by unit tests to ensure functionality and robustness. In the guide, we will describe how to run these tests. |
+| 0d. | Docker | We will provide a Dockerfile(s) that can be used to test all the functionality delivered with this milestone. |
+| 0e. | Article | We will publish an **article** on Medium that explains how we develop this step |
+| 1. | Web Dapp | We will create a web dapp to verify the functionality of the infrastructure, the GUI will display interactions between two blockchains.
 
 
 ## Future Plans
