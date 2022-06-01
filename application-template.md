@@ -133,7 +133,7 @@ Regarding anyone in the Web3 foundation (and/or Parity Technologies) that we spo
 - **Full-Time Equivalent (FTE):**  2
 - **Total Costs:** 40,000 USD
 
-### Milestone 1 Example — Implement the randomized substrate pallet ```pallet_random_node_selector```
+### Milestone 1 — Implement the randomized substrate pallet ```pallet_random_node_selector```
 
 - **Estimated duration:** 1 month
 - **FTE:**  2
@@ -149,7 +149,7 @@ Regarding anyone in the Web3 foundation (and/or Parity Technologies) that we spo
 | 1. | Substrate pallet | We will create a ```pallet_random_node_selector``` that implement the randomized selection of the nodes for the fast blockchain using the Substrate Randomness trait |  
 
 
-### Milestone 2 Example — Connection with of the two blockchain
+### Milestone 2 — Connection with of the two blockchain
 
 - **Estimated Duration:** 1 month
 - **FTE:**  2
@@ -165,7 +165,7 @@ Regarding anyone in the Web3 foundation (and/or Parity Technologies) that we spo
 | 1. | RPC Method (Random Selector) | We will create a custom RPC method to call from the fast blockchain the result of the random selection of the nodes |
 | 2. | RPC Method (Blockchain status) | We will create a set of custom RPC method to check the status of the two blockchain (e.g. if a node on the fast blockchain is reliable) |
 
-### Milestone 2 Example — Connection with of the two blockchain
+### Milestone 3 — Connection with of the two blockchain
 
 - **Estimated Duration:** 2 months
 - **FTE:**  2
