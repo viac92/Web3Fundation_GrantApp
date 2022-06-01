@@ -168,7 +168,7 @@ Regarding anyone in the Web3 foundation (and/or Parity Technologies) that we spo
 
 - **Total Estimated Duration:** 5 months
 - **Full-Time Equivalent (FTE):**  2
-- **Total Costs:** 40,000 USD
+- **Total Costs:** 50,000 USD
 
 ### Milestone 1 — Implement the randomized substrate pallet ```pallet_random_node_selector```
 
