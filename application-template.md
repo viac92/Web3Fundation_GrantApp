@@ -166,7 +166,7 @@ Regarding anyone in the Web3 foundation (and/or Parity Technologies) that we spo
 
 ### Overview
 
-- **Total Estimated Duration:** 4 months
+- **Total Estimated Duration:** 5 months
 - **Full-Time Equivalent (FTE):**  2
 - **Total Costs:** 40,000 USD
 
