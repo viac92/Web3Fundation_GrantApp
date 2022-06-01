@@ -194,7 +194,7 @@ Regarding anyone in the Web3 foundation (and/or Parity Technologies) that we spo
 | 0d. | Docker | We will provide a Dockerfile(s) that can be used to test all the functionality delivered with this milestone. |
 | 0e. | Article | We will publish an **article** on Medium that explains how we developed this step. |
 | 1. | RPC Method (Random Selector) | We will create a custom RPC method to call from the fast blockchain the result of the random selection of the nodes |
-| 2. | RPC Method (Blockchain status) | We will create a set of custom RPC method to check the status of the two blockchain. (e.g. if a node on the fast blockchain is reliable) |
+| 2. | RPC Method (Blockchain status) | We will create a set of custom RPC methods to check the status of the two blockchain. (e.g. if a node on the fast blockchain is reliable) |
 
 ### Milestone 3 — Web Dapp
 
@@ -209,7 +209,7 @@ Regarding anyone in the Web3 foundation (and/or Parity Technologies) that we spo
 | 0c. | Testing Guide | Core functions will be fully covered by unit tests to ensure functionality and robustness. In the guide, we will describe how to run these tests. |
 | 0d. | Docker | We will provide a Dockerfile(s) that can be used to test all the functionality delivered with this milestone. |
 | 0e. | Article | We will publish an **article** on Medium that explains how we developed this step. |
-| 1. | Web Dapp | We will create a web dapp to verify the functionality of the infrastructure, the GUI will display interactions between two blockchains.
+| 1. | Web Dapp | We will create a web dapp to verify the functionality of the infrastructure, the GUI will display interactions between the two blockchains.
 
 
 ## Future Plans
