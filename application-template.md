@@ -73,9 +73,15 @@ So Datagen is **NOT**:
 The Datagen project fits into Polkadot ecosystem by expanding its use cases to the segment of decentralized cloud computing, whose importance can never be underlined enough for the healthiness of the broader Web3 and blockchain industries. Since the Datagen infrastructure is targeting mostly Web3 application providers as main customers to provide cloud computing to, this can loop in a positive feedback of new projects entering in the Polkadot ecosystems and as well as a very valuable use for a Polkadot’s / Kusama’s parachain.
 
 In the Polkadot / Kusama ecosystem the most similar project is the  Phala Network  (https://www.phala.network/en/ )
-Even if Phala Network’s goal is similar to the one of Datagen (decentralized cloud computing), the technical approach is radically different, since Phala is pursuing off-chain computation secured by a secure smart-contract platform. Both solutions are technically viable, but we feel that (without the presumption of being too knowledgeable about someone’s else target market or to give suggestions to someone else) Phala can be more appealing for legacy industries that want to  interface blockchain (and Web3) to innovate existing business model (for example we think that Phala could be very compelling for health-tech applications that want to validate sensitive clinical data with a secure, encrypted network) while (from the feedbacks that we receive) we feel that in-chain computation would be more compelling for Web3 native applications, since in-chain computation is perceived as more decentralized and more secure (not necessarily rightly) by the semi-technical management that often decides what providers is more suitable. For the above explained reasons, we see Phala more like a complementary project than like an outright competitor (even if, of course, some marginal market overlapping could appear in some specific areas), since off-chain and in-chain computation, even if equally decentralized, can draw user-base from different contexts.
+Even if Phala Network’s goal is similar to the one of Datagen (decentralized cloud computing), the technical approach is radically different, since Phala is pursuing off-chain computation secured by a secure smart-contract platform.
 
-In other ecosystems we can see different competitors, each one with a very different both technical and go to market approach (explaining them one to one will be too long to explain in this grant application), both off-chain and in-chain. Off-chain SONM (independent copy-cat of the Ethereum blockchain), Aleph.im (Solana, cross-chain compatible). And (more or less) in-chain: Akash (Solana Nodes + Cosmos), Golem (Ethereum), Cudos (L1, independent, cross-chain compatible), StackOS (Binance, Blockchain, Avalanche) and others. 
+Both solutions are technically viable, but we feel that (without the presumption of being too knowledgeable about someone’s else target market or to give suggestions to someone else) Phala can be more appealing for legacy industries that want to  interface blockchain (and Web3) to innovate existing business model (for example we think that Phala could be very compelling for health-tech applications that want to validate sensitive clinical data with a secure, encrypted network) while (from the feedbacks that we receive) we feel that in-chain computation would be more compelling for Web3 native applications, since in-chain computation is perceived as more decentralized and more secure (not necessarily rightly) by the semi-technical management that often decides what providers is more suitable.
+
+For the above explained reasons, we see Phala more like a complementary project than like an outright competitor (even if, of course, some marginal market overlapping could appear in some specific areas), since off-chain and in-chain computation, even if equally decentralized, can draw user-base from different contexts.
+
+In other ecosystems we can see different competitors, each one with a very different both technical and go to market approach (explaining them one to one will be too long to explain in this grant application), both off-chain and in-chain.
+
+Off-chain SONM (independent copy-cat of the Ethereum blockchain), Aleph.im (Solana, cross-chain compatible). And (more or less) in-chain: Akash (Solana Nodes + Cosmos), Golem (Ethereum), Cudos (L1, independent, cross-chain compatible), StackOS (Binance, Blockchain, Avalanche) and others. 
 
 The existence of many competitors (each different from the other) in many different stacks is for us a confirmation that we are working on something that matters and we think that for the Polkadot ecosystem is important to harbor different cloud computing projects, with different (in some points complementary and in other alternative) approaches, both to help boosting the wider Web3 environment to shift away from centralized Web2 providers like AWS, Google Cloud, Azure, IBM, Alibaba and to acquire and retain valuable projects while competing with other major stacks, because cloud computing matters a lot in the web economy and in the web physical infrastructure and for a top stack like Polkadot / Kusama should matter WHERE cloud computing, as a strategic asset, is happening.
 
@@ -177,14 +183,14 @@ Regarding anyone in the Web3 foundation (and/or Parity Technologies) that we spo
 | 0c. | Testing Guide | Core functions will be fully covered by unit tests to ensure functionality and robustness. In the guide, we will describe how to run these tests. |
 | 0d. | Docker | We will provide a Dockerfile(s) that can be used to test all the functionality delivered with this milestone. |
 | 0e. | Article | We will publish an **article** on Medium that explains how we developed the pallet. |
-| 1. | Substrate pallet | We will create a ```pallet_random_node_selector``` that implement the randomized selection of the nodes for the fast blockchain using the Substrate Randomness trait |  
+| 1. | Substrate pallet | We will create a ```pallet_random_node_selector``` that implement the randomized selection of the nodes for the fast blockchain using the Substrate ```Randomness``` trait |  
 
 
 ### Milestone 2 — Connecting the two blockchain
 
-- **Estimated Duration:** 1 month
+- **Estimated Duration:** 2 month
 - **FTE:**  2
-- **Costs:** 10,000 USD
+- **Costs:** 20,000 USD
 
 | Number | Deliverable | Specification |
 | -----: | ----------- | ------------- |
@@ -195,6 +201,8 @@ Regarding anyone in the Web3 foundation (and/or Parity Technologies) that we spo
 | 0e. | Article | We will publish an **article** on Medium that explains how we developed this step. |
 | 1. | RPC Method (Random Selector) | We will create a custom RPC method to call from the fast blockchain the result of the random selection of the nodes |
 | 2. | RPC Method (Blockchain status) | We will create a set of custom RPC methods to check the status of the two blockchain. (e.g. if a node on the fast blockchain is reliable) |
+| 3. | Setup the two blockchain | We will setup the two blockchain to test the commuinications and the ```pallet_random_node_selector``` |
+
 
 ### Milestone 3 — Web Dapp
 
