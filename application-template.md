@@ -186,7 +186,7 @@ Regarding anyone in the Web3 foundation (and/or Parity Technologies) that we spo
 | 1. | Substrate pallet | We will create a ```pallet_random_node_selector``` that implement the randomized selection of the nodes for the fast blockchain using the Substrate ```Randomness``` trait |  
 
 
-### Milestone 2 — Connecting the two blockchain
+### Milestone 2 — Connecting the two blockchains
 
 - **Estimated Duration:** 2 months
 - **FTE:**  2
@@ -200,8 +200,8 @@ Regarding anyone in the Web3 foundation (and/or Parity Technologies) that we spo
 | 0d. | Docker | We will provide a Dockerfile(s) that can be used to test all the functionality delivered with this milestone. |
 | 0e. | Article | We will publish an **article** on Medium that explains how we are going to develop this step. |
 | 1. | RPC Method (Random Selector) | We will create a custom RPC method to get the result of the random selection of the nodes to the fast blockchain  |
-| 2. | RPC Method (Blockchain status) | We will implement a set of RPC methods to check the status of the two blockchain. (e.g. if a node on the fast blockchain is reliable) |
-| 3. | Setup the two blockchain | We will setup the two blockchain to test the commuinications and the ```pallet_random_node_selector``` |
+| 2. | RPC Method (Blockchain status) | We will implement a set of RPC methods to check the status of the two blockchains. (e.g. if a node on the fast blockchain is reliable) |
+| 3. | Setup the two blockchains | We will setup the two blockchains to test the communication and the ```pallet_random_node_selector``` |
 
 
 ### Milestone 3 — Web Dapp
@@ -217,7 +217,7 @@ Regarding anyone in the Web3 foundation (and/or Parity Technologies) that we spo
 | 0c. | Testing Guide | Core functions will be fully covered by unit tests to ensure functionality and robustness. In the guide, we will describe how to run these tests. |
 | 0d. | Docker | We will provide a Dockerfile(s) that can be used to test all the functionality delivered with this milestone. |
 | 0e. | Article | We will publish an **article** on Medium that explains how we are going to develop this step. |
-| 1. | Web Dapp | We will create a web dapp to verify the functionality of the infrastructure, the GUI will display interactions between the two blockchain.
+| 1. | Web Dapp | We will create a web dapp to verify the functionality of the infrastructure, the GUI will display interactions between the two blockchains.
 
 
 ## Future Plans
