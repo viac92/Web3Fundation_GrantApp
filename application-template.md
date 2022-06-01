@@ -1,0 +1,196 @@
+# W3F Grant Proposal
+
+- **Project Name:** Datagen Project
+- **Team Name:** B-Datagray
+- **Payment Address:** BTC, Ethereum (USDT/USDC/DAI) or Polkadot/Kusama (aUSD) payment address. Please also specify the currency. (e.g. 0x8920... (DAI))
+- **[Level](https://github.com/w3f/Grants-Program/tree/master#level_slider-levels):** 2
+
+## Project Overview
+
+### Overview
+
+B-Datagray’s Datagen project concerns the development of a decentralized infrastructure for CPU/GPU cloud computing, in chain, through different blockchain components.
+
+The Datagen infrastructure requires the creation of a Substrate-based blockchain with some key features: low latency time, high efficiency (compatibly with the decentralized nature of the network), high degree of decentralization (higher than a traditional PoS would allow) of the physical hardware providing the cloud computing (therefore requiring a customized consensus protocol) and in-chain (or near-in-chain) computation (no off-chain based solutions). 
+
+The Markets that the Datagen infrastructure want primarily to serve are: privacy friendly search engines and browsers, decentralized Web3 games and other additional ones (for example decentralizing the hardware layer of PoS blockchains, typically hosted on AWS and similar, etc…).
+
+What the Datagen infrastructure aims to be is basically a Web3 version of AWS, mostly for Web3 native applications (+privacy friendly search engines regardless if Web2 or Web3) that requires by nature low latency times and efficiency rates that previous designs of decentralized networks for in-chain computation didn’t allowed.
+
+B-Datagray team is really interested in creating this solution because we think that for the Web3 revolution to grow, and stay decentralized, is very important to go down to the backbones of the Web. B-Datagray team thinks that is a remarkable problem that most Web3 applications are still using AWS and similar centralized providers to run (if we go down to the hardware layer) and helping to diversify the array of solutions available to other Web3 project is a very inspiring goal for us.
+
+### Project Details
+
+Architecture: The infrastructure will rely on two main pillars: a light and independent L1 substrate based blockchain and a (L2) Polkadot/ Kusama parachain (slower but more resilient). 
+
+The actual cloud computing will happen in our L1 Datagen (substrate based) blockchain. The reason for which we are having the cloud computing in an independent blockchain is that we need our blocktime to be lower than Polkadot’s / Kusama’s blocktime (ideally < 1sec when the infrastructure is ready) to be able to provide cloud computing to most Web3 gaming applications and privacy-friendly search engines. While, what happens in this L1 blockchain will be asynchronously and random verified in the Parachain.
+
+I adopt the relativistic point of view of the data-flow from the user to explain the underlying process. 
+The user connects to the network (typically through the API of the application provider that is using the Datagen Infrastructure), than the user goes through the so called ECHO procedure: he/she sends a package of raw data to be processed data by the network and the first validator that answers correctly to him/her is paired to the user on a one to one basis (this is the only PoW heavy-like process that is happening in the whole infrastructure and is done to pair any user with the most efficient validator to him/her, starting from the assumption that by geography and/or specific application in use and/or other factors not all the users and the same validators have the same latency time). 
+The user is now paired to a specific validator (for a given amount of time -in the magnitude of some weeks-, after the user will send periodically other ECHOs, to allow to reassess the efficiency of the validators in the network). 
+The user (through the Application Provider’s API) sends raw data both the paired validator in the L1 Datagen Blockchain and to the L2 Polkadot’s (datagen) Parachain. 
+The validator in the L1 blockchain must solve the raw computational request and turn it into a hash, within the blocktime, so, the hashed data must propagate in the whole L1 blockchain, but there is no need for the raw data to be processed multiple times (like in a PoW) in the L1 blockchain. 
+So, what is verifiably shared by the validators of the L1 blockchain is the series of hashes and not the reiteration of the same computational process. The L1 blockchain, as a whole, is so behaving more alike a PoS blockchain than a PoW. 
+Since the blocktime of the Parachain is longer than the blocktime of the L1, both the raw data from the user and the hashed data from the validator are sent to the Parachain in an asynchronous way, through a bridge (typically it could be every 10 to 30 blocks of the L1). The parachain is not re-computing all the raw and the hashed data, for the moment is just storing them and verifying that, for example, X raw data came from User A, resulting in Y hash from Validator A. Random, the Parachain extracts some computational problems to be double-checked, for example, it can randomly extract X raw data for double-checking and entrust it to validator B, C and D (sending back the request to them in the faster L1 blockchain through a bridge). B, C and D compute X again. Presuming that the majority of B, C and D (so at least two of them) are honest, the majority of them should compute X and obtain the same hash (hash ?). They send the hash back to the Parachain, that than compares the hashes. If for at least two validators (between B,C and D) hash? = hash Y (the same hash obtained by validator A), validator A is then presumed honest and can continue with its validating activity. If, instead, for at least 2 validators (between B, C and D) hash? ≠ hash Y, validator A is presumed a liar.
+
+Since to be a validator A needed both to provide GPU and/or CPU processing capacity and to buy and stake DataGen native tokens, is easy to impose an economical cost for the cheating validator A by making it loose staked coins as a consequence of its wrong computation. In this regard the Parachain acts as an authority for the random processes of the L1 faster blockchain. We prefer the use of a Parachain, instead than two L1 or a L2 of our own L1, because of the improved resiliency that the Polkadot ecosystem can provide.
+
+We must underline that, even if the goal of this very complex design is to keep even the hardware layer as decentralized as possible (compared to a PoS network, where there is strong economic incentive for a validator to host the computing capacity on the top of centralized server farm like AWS) we can’t prevent to validators hosted on centralized providers to be participate to the network. The trade-off for such a result would so impede efficiency and low latency that, instead than trying to attain it (for some ideological reason of decentralization per self) that we think that we should try instead to keep the hardware layer of the network decentralized enough. We think that this can be attained as a collateral result of the above explained ECHO procedure (whose primary goal is to increase the overall efficiency and decrease the overall latency time of the network, by pairing users and validators on the basis of response time) This collateral positive externality happens since rewarding validators that are fastest to respond to specific clusters of users are rewarded with more users and more validating activity will have meaningful consequences looking at their geographical distribution: in some geographical contexts (US coasts or Western Europe) where the internet connection is fast and big server farms are close-by, this will keep the economic incentive for validators to be hosted in centralized server farms, on the opposite, in other contexts (like some parts of South-East Asia, Sub-Saharan Africa and LATAM) where broadband connection is slow or inexistent and server farms far away, there will be a strong economic incentive to set up independent hardware facilities to validate the activity of local or regional areas. Those independent validators, while not optimally located to compete with AWS-hosted validators for users in the “north of the world”, can also become validators of last resort in the case in which the centralized server farms are not providing service anymore (it can be due to technical outage or political pressure for censorship or other factor). As said, the goal is not to expel AWS-hosted validators from the Datagen network, but to keep it decentralized enough while being at the same time low latency and computationally efficient.
+Here (METTERE LINK MODELLO MATEMATICO DRIVE):  a very simple mathematical modelling on the effects that specific amounts of double checks will have on the overall efficiency of the network (in comparison with both traditional PoW -from one side- and centralized computing -from the other side-).
+
+The only computational activity that his happening off-chain is (following the example above) the act of validator A processing the raw data X and giving it to the User A, but: to receive the reward in #DG, Validator A needs also to send the hashed data to both the other validators of the L1 lighter chain and to the Parachain, failing to do so will mean that he is processing the data off-chain and that it is not rewarded since its activity is not recorded in the blockchain. Raw data is also sent independently from the User A to the Parachain and the correct pairing between hashing and raw data is always verified in-chain.
+
+Ideally, we would like to explore some technic to keep light the blockchains long-term to keep it clean of old unnecessary raw data and just having hashes long term (that’s why we like so much Polkadot’s feature that allows blockchains to evolve without forking).
+
+So Datagen is **NOT**: 
+- providing cloud storage of processed data;
+- doing substantial stuff off-chain;
+- PoW;
+- PoS.
+
+
+### Ecosystem Fit
+
+The Datagen project fits into Polkadot ecosystem by expanding its use cases to the segment of decentralized cloud computing, whose importance can never be underlined enough for the healthiness of the broader Web3 and blockchain industries. Since the Datagen infrastructure is targeting mostly Web3 application providers as main customers to provide cloud computing to, this can loop in a positive feedback of new projects entering in the Polkadot ecosystems and as well as a very valuable use for a Polkadot’s / Kusama’s parachain.
+
+In the Polkadot / Kusama ecosystem the most similar project is the  Phala Network  (https://www.phala.network/en/ )
+Even if Phala Network’s goal is similar to the one of Datagen (decentralized cloud computing), the technical approach is radically different, since Phala is pursuing off-chain computation secured by a secure smart-contract platform. Both solutions are technically viable, but we feel that (without the presumption of being too knowledgeable about someone’s else target market or to give suggestions to someone else) Phala can be more appealing for legacy industries that want to  interface blockchain (and Web3) to innovate existing business model (for example we think that Phala could be very compelling for health-tech applications that want to validate sensitive clinical data with a secure, encrypted network) while (from the feedbacks that we receive) we feel that in-chain computation would be more compelling for Web3 native applications, since in-chain computation is perceived as more decentralized and more secure (not necessarily rightly) by the semi-technical management that often decides what providers is more suitable. For the above explained reasons, we see Phala more like a complementary project than like an outright competitor (even if, of course, some marginal market overlapping could appear in some specific areas), since off-chain and in-chain computation, even if equally decentralized, can draw user-base from different contexts.
+
+In other ecosystems we can see different competitors, each one with a very different both technical and go to market approach (explaining them one to one will be too long to explain in this grant application), both off-chain and in-chain. Off-chain SONM (independent copy-cat of the Ethereum blockchain), Aleph.im (Solana, cross-chain compatible). And (more or less) in-chain: Akash (Solana Nodes + Cosmos), Golem (Ethereum), Cudos (L1, independent, cross-chain compatible), StackOS (Binance, Blockchain, Avalanche) and others. 
+
+The existence of many competitors (each different from the other) in many different stacks is for us a confirmation that we are working on something that matters and we think that for the Polkadot ecosystem is important to harbor different cloud computing projects, with different (in some points complementary and in other alternative) approaches, both to help boosting the wider Web3 environment to shift away from centralized Web2 providers like AWS, Google Cloud, Azure, IBM, Alibaba and to acquire and retain valuable projects while competing with other major stacks, because cloud computing matters a lot in the web economy and in the web physical infrastructure and for a top stack like Polkadot / Kusama should matter WHERE cloud computing, as a strategic asset, is happening.
+
+In particular is possible to can observe that the Solana ecosystem is backing both one in-chain (Akash) and one off-chain (Aleph.im) decentralized cloud computing project, clearly in light of the different markets than in-chain and off-chain decentralized cloud computing can tap. In this way Solana ecosystem is positioning itself with a strong head-start to win the race for decentralized cloud computing.
+
+## Team
+
+### Team members
+
+- Angela Griggio (CEO)
+- Luca Eugenio Barlassina (COO)
+- Niccolò Baldini (Head of Substrate Division)
+- Ren Okamoto (Head of Solidity Smart-Contracts Development)
+- Alawiye Olukayode (front end developer)
+- William Liu (part-time / blockchain developer)
+- Giulia Cortinovis (part time / web designer)
+- Ahmed Abdel Al (part time / graphic designer)
+
+
+### Contact
+
+- **Contact Name:** Angela Griggio
+- **Contact Email:** team@b-datagray.com
+- **Website:** https://www.b-datagray.com/
+
+### Legal Structure
+
+- **Registered Address:** Castleforbes Road 22, Dublin 1, Dublin, Ireland, EU.
+- **Registered Legal Entity:** B-Datagray Limited
+
+### Team's experience
+
+Both founders (Angela & Luca) have a legal background. They entered in the blockchain space in 2019 (shifting carrier) because they both strongly believe in the transformative power that the blockchain revolution can have on society. After ≈1 year of self-taught study of the blockchain technology and market, they incorporated B-Datagray in late 2020. At the beginning it was a very lonely but enriching journey, since they had 0 previous connection in the industry, 0 track record and 0 capital. Angela and Luca started being full-time on the project in January 2021. In Spring 2021 they started building the technical team (at the beginning all part time, due to the lack of capital) and not without encountering not particularly honest devs, while that made things more difficult short-term, long-term it allowed the funders to become more skilled in managing a team. Our currently beautiful team started to come togheter after summer 2021. In that period, we also entered in the XEurope Accelerator. Ren (with 7 years of coding experience and 5 of Solidity coding) was the first to become mostly full-time, in October 2021, before we were able to pay him a salary. In November B-Datagray received the first VC investment and to date we have 2 VC and 2 angel investments.  We have developed all the tokenomic smart contracts, including a community governance smart contract to help smoothing the transition from the BSC to our Native + Polkadot blockchain and all of them have been audited by Certik. B-Datagray has also been recently finalist at the MIT Bitcoin Pitch Competition 2022.
+We know that we still have much to grow and to learn, but all the journey until here and now taught to B-Datagray’s founder a great deal about bootstrapping and managing a company and about doing much with very little. The ability and willingness to learn and grow and change and to work hard and to believe, even in the most difficult moment, and to find the resources, in the inner-self and in the other people, even when is seemingly and rationally impossible, in our opinion is more important than any learned skill for team and project leaders, since is an attitude that you have inside you and that you express in every aspect of your personal and professional life and that will be determinant to solve any of the multiple problems that will inevitably and unexpectedly occur during the project’s lifetime. 
+All our devs (and our designers) are professionals and also very committed to learning and improving constantly their skills.
+
+
+### Team Code Repos
+
+- https://github.com/Datagen-Project (B-Datagray’s website front-end and back-end and the front-end of our past in-chain sales and of our ongoing airdrop are in private repo)
+- Alawiye ( https://github.com/oluseyi-frontend?tab=repositories )
+- Luca (https://github.com/Lord-Nymphis )
+- Niccolò ( https://github.com/viac92 )
+- Ren ( https://github.com/fantasy2345 )
+- William ( https://github.com/Crypto-One-dev )
+
+
+### Team LinkedIn Profiles (if available)
+
+- Angela (https://www.linkedin.com/in/angela-griggio-30a6a0182/)
+- Ahmed (http://www.ahmedabdelal.com/ -Personal Website-)
+- Alawiye (https://www.linkedin.com/in/alawiye-olukayode-aa365298/)
+- Giulia (https://www.linkedin.com/in/giulia-cortinovis-98702796/)
+- Luca (https://www.linkedin.com/in/luca-eugenio-barlassina-293077180/)
+- Niccolò (https://www.linkedin.com/in/niccol%C3%B3-baldini-0400baa9/)
+- Ren (https://www.linkedin.com/in/ren-okamoto-140a97224/)
+- William (https://www.linkedin.com/in/william-liu-8a4672218/)
+
+
+## Development Status
+
+What we already developed (using Solidity) is basically all the tokenomic smart contracts regulating our DataGen token (#DG), including one to smooth the transition from the BSC network to the Polkadot / Native DataGen Infrastructure, with a rigorously decentralized community voting procedure (https://github.com/Datagen-Project/DataGen-Smart-Contracts/blob/main/contracts/MiningReservation.sol). 
+
+In total our team has already developed around ≈2K lines of code of smart contracts just for the smart contracts, excluding of course the default configurations (like lock.json , etc…), we are speaking of functional code. In addition to that, we have in private repo the functional code for the website and the sale interface.
+
+Regarding anyone in the Web3 foundation (and/or Parity Technologies) that we spoke with about our intended development with substrate we had: some technical email and email exchange with Gavin Wood, casual technical conversation with Richard Casey in a Dublin blockchain event, some calls (including technical explanations) with Rohan Joseph and Surag Sheth. One technical call with Justin Frevert. A long technical chat in person with Dan Shields at the MIT Bitcoin Expo 2022. A call with Santiago Balaguer.
+
+
+## Development Roadmap :nut_and_bolt:
+
+This section should break the development roadmap down into milestones and deliverables. To assist you in defining it, we have created a document with examples for some grant categories [here](../docs/grant_guidelines_per_category.md). Since these will be part of the agreement, it helps to describe _the functionality we should expect in as much detail as possible_, plus how we can verify and test that functionality. Whenever milestones are delivered, we refer to this document to ensure that everything has been delivered as expected.
+
+Below we provide an **example roadmap**. In the descriptions, it should be clear how your project is related to Substrate, Kusama or Polkadot. We _recommend_ that teams structure their roadmap as 1 milestone ≈ 1 month.
+
+For each milestone,
+
+- make sure to include a specification of your software. _Treat it as a contract_; the level of detail must be enough to later verify that the software meets the specification.
+- include the amount of funding requested _per milestone_.
+- include documentation (tutorials, API specifications, architecture diagrams, whatever is appropriate) in each milestone. This ensures that the code can be widely used by the community.
+- provide a test suite, comprising unit and integration tests, along with a guide on how to set up and run them.
+- commit to providing Dockerfiles for the delivery of your project.
+- indicate milestone duration as well as number of full-time employees working on each milestone.
+- **Deliverables 0a-0d are mandatory for all milestones**, and deliverable 0e at least for the last one. If you do not intend to deliver one of these, please state a reason in its specification (e.g. Milestone X is research oriented and as such there is no code to test).
+
+> :zap: If any of your deliverables is based on somebody else's work, make sure you work and publish _under the terms of the license_ of the respective project and that you **highlight this fact in your milestone documentation** and in the source code if applicable! **Teams that submit others' work without attributing it will be immediately terminated.**
+
+### Overview
+
+- **Total Estimated Duration:** Duration of the whole project (e.g. 2 months)
+- **Full-Time Equivalent (FTE):**  Average number of full-time employees working on the project throughout its duration (see [Wikipedia](https://en.wikipedia.org/wiki/Full-time_equivalent), e.g. 2 FTE)
+- **Total Costs:** Requested amount in USD for the whole project (e.g. 12,000 USD). Note that the acceptance criteria and additional benefits vary depending on the [level](../README.md#level_slider-levels) of funding requested. This and the costs for each milestone need to be provided in USD; if the grant is paid out in Bitcoin, the amount will be calculated according to the exchange rate at the time of payment.
+
+### Milestone 1 Example — Implement Substrate Modules
+
+- **Estimated duration:** 1 month
+- **FTE:**  2
+- **Costs:** 8,000 USD
+
+| Number | Deliverable | Specification |
+| -----: | ----------- | ------------- |
+| 0a. | License | Apache 2.0 / GPLv3 / MIT / Unlicense |
+| 0b. | Documentation | We will provide both **inline documentation** of the code and a basic **tutorial** that explains how a user can (for example) spin up one of our Substrate nodes and send test transactions, which will show how the new functionality works. |
+| 0c. | Testing Guide | Core functions will be fully covered by unit tests to ensure functionality and robustness. In the guide, we will describe how to run these tests. |
+| 0d. | Docker | We will provide a Dockerfile(s) that can be used to test all the functionality delivered with this milestone. |
+| 0e. | Article | We will publish an **article**/workshop that explains [...] (what was done/achieved as part of the grant). (Content, language and medium should reflect your target audience described above.)
+| 1. | Substrate module: X | We will create a Substrate module that will... (Please list the functionality that will be implemented for the first milestone) |  
+| 2. | Substrate module: Y | We will create a Substrate module that will... |  
+| 3. | Substrate module: Z | We will create a Substrate module that will... |  
+| 4. | Substrate chain | Modules X, Y & Z of our custom chain will interact in such a way... (Please describe the deliverable here as detailed as possible) |  
+
+
+### Milestone 2 Example — Additional features
+
+- **Estimated Duration:** 1 month
+- **FTE:**  1
+- **Costs:** 4,000 USD
+
+...
+
+
+## Future Plans
+
+Please include here
+
+- how you intend to use, enhance, promote and support your project in the short term, and
+- the team's long-term plans and intentions in relation to it.
+
+
+## Additional Information :heavy_plus_sign:
+
+**How did you hear about the Grants Program?** Web3 Foundation Website / Medium / Twitter / Element / Announcement by another team / personal recommendation / etc.
+
+Here you can also add any additional information that you think is relevant to this application but isn't part of it already, such as:
+
+- Work you have already done.
+- If there are any other teams who have already contributed (financially) to the project.
+- Previous grants you may have applied for.
