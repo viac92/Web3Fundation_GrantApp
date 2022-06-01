@@ -182,13 +182,13 @@ Regarding anyone in the Web3 foundation (and/or Parity Technologies) that we spo
 | 0b. | Documentation | We will provide both **inline documentation** of the code and an API specifications |
 | 0c. | Testing Guide | Core functions will be fully covered by unit tests to ensure functionality and robustness. In the guide, we will describe how to run these tests. |
 | 0d. | Docker | We will provide a Dockerfile(s) that can be used to test all the functionality delivered with this milestone. |
-| 0e. | Article | We will publish an **article** on Medium that explains how we developed the pallet. |
+| 0e. | Article | We will publish an **article** on Medium that explains how we are going to develop the pallet. |
 | 1. | Substrate pallet | We will create a ```pallet_random_node_selector``` that implement the randomized selection of the nodes for the fast blockchain using the Substrate ```Randomness``` trait |  
 
 
 ### Milestone 2 — Connecting the two blockchain
 
-- **Estimated Duration:** 2 month
+- **Estimated Duration:** 2 months
 - **FTE:**  2
 - **Costs:** 20,000 USD
 
@@ -198,7 +198,7 @@ Regarding anyone in the Web3 foundation (and/or Parity Technologies) that we spo
 | 0b. | Documentation | We will provide both **inline documentation** of the code and and an documentation of the infrastructure |
 | 0c. | Testing Guide | Core functions will be fully covered by unit tests to ensure functionality and robustness. In the guide, we will describe how to run these tests. |
 | 0d. | Docker | We will provide a Dockerfile(s) that can be used to test all the functionality delivered with this milestone. |
-| 0e. | Article | We will publish an **article** on Medium that explains how we developed this step. |
+| 0e. | Article | We will publish an **article** on Medium that explains how we are going to develop this step. |
 | 1. | RPC Method (Random Selector) | We will create a custom RPC method to get the result of the random selection of the nodes to the fast blockchain  |
 | 2. | RPC Method (Blockchain status) | We will implement a set of RPC methods to check the status of the two blockchain. (e.g. if a node on the fast blockchain is reliable) |
 | 3. | Setup the two blockchain | We will setup the two blockchain to test the commuinications and the ```pallet_random_node_selector``` |
@@ -216,7 +216,7 @@ Regarding anyone in the Web3 foundation (and/or Parity Technologies) that we spo
 | 0b. | Documentation | We will provide both **inline documentation** of the code and and an documentation of the infrastructure |
 | 0c. | Testing Guide | Core functions will be fully covered by unit tests to ensure functionality and robustness. In the guide, we will describe how to run these tests. |
 | 0d. | Docker | We will provide a Dockerfile(s) that can be used to test all the functionality delivered with this milestone. |
-| 0e. | Article | We will publish an **article** on Medium that explains how we developed this step. |
+| 0e. | Article | We will publish an **article** on Medium that explains how we are going to develop this step. |
 | 1. | Web Dapp | We will create a web dapp to verify the functionality of the infrastructure, the GUI will display interactions between the two blockchain.
 
 
