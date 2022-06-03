@@ -39,7 +39,7 @@ So, what is verifiably shared by the validators of the FB blockchain is the seri
 
 Since the blocktime of the Parachain is longer than the blocktime of the FB, both the raw data from the user and the hashed data from the validator are sent to the Parachain in an asynchronous way (typically it could be every 10 to 30 blocks of the FB). 
 The parachain is not re-computing all the raw and the hashed data, for the moment is just storing them and verifying that.
-![datagen_deep_infrastructure_diagram](https://i.imgur.com/tWXuiBV.png)
+![datagen_deep_infrastructure_diagram](https://i.imgur.com/9p4RwB5.png)
 
 **Example**: X raw data came from User A, resulting in Y hash from Validator A. Random, the Parachain extracts some computational problems to be double-checked, for example, it can randomly extract X raw data for double-checking and entrust it to validator B, C and D (sending back the request to them in the FB). B, C and D compute X again. Presuming that the majority of B, C and D (so at least two of them) are honest, the majority of them should compute X and obtain the same hash (hash ?). They send the hash back to the Parachain, that than compares the hashes. If for at least two validators (between B,C and D) hash? = hash Y (the same hash obtained by validator A), validator A is then presumed honest and can continue with its validating activity.
 If, instead, for at least 2 validators (between B, C and D) hash? ≠ hash Y, validator A is presumed a liar.
