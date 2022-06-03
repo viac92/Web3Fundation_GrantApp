@@ -157,7 +157,7 @@ All our devs (and our designers) are professionals and also very committed to le
 
 What we already developed (using Solidity) is basically all the tokenomic smart contracts regulating our DataGen token (#DG), including one to smooth the transition from the BSC network to the Polkadot / Native DataGen Infrastructure, with a rigorously decentralized community voting procedure (https://github.com/Datagen-Project/DataGen-Smart-Contracts/blob/main/contracts/MiningReservation.sol). 
 
-In total our team has already developed around ≈2K lines of code of smart contracts just for the smart contracts, excluding of course the default configurations (like lock.json , etc…), we are speaking of functional code. In addition to that, we have in private repo the functional code for the website and the sale interface.
+In total our team has already developed around ≈2K lines of code of smart contracts just for the Datagen project, excluding of course the default configurations (like lock.json , etc…), we are speaking of functional code. In addition to that, we have in private repo the functional code for the website and the sale interface.
 
 Regarding anyone in the Web3 foundation (and/or Parity Technologies) that we spoke with about our intended development with substrate we had: some technical email and email exchange with Gavin Wood, casual technical conversation with Richard Casey in a Dublin blockchain event, some calls (including technical explanations) with Rohan Joseph and Surag Sheth. One technical call with Justin Frevert. A long technical chat in person with Dan Shields at the MIT Bitcoin Expo 2022. A call with Santiago Balaguer.
 
