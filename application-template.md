@@ -222,18 +222,6 @@ Regarding anyone in the Web3 foundation (and/or Parity Technologies) that we spo
 
 ## Future Plans
 
-Please include here
+- Short term, while the development team works on the grant proposal, the management team will continue the private sale of our DataGen token (to ensure more financial resources for our project) and increase our available network;
 
-- how you intend to use, enhance, promote and support your project in the short term, and
-- the team's long-term plans and intentions in relation to it.
-
-
-## Additional Information :heavy_plus_sign:
-
-**How did you hear about the Grants Program?** Web3 Foundation Website / Medium / Twitter / Element / Announcement by another team / personal recommendation / etc.
-
-Here you can also add any additional information that you think is relevant to this application but isn't part of it already, such as:
-
-- Work you have already done.
-- If there are any other teams who have already contributed (financially) to the project.
-- Previous grants you may have applied for.
+- Our long term plan is to access the Substrate Builder's Program and walk the path to obtain a Parachain.
