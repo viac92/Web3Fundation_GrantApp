@@ -164,7 +164,7 @@ Regarding anyone in the Web3 foundation (and/or Parity Technologies) that we spo
 
 ## Development Roadmap
 
-We will implement only a early stage of our infrastructor with this grant.
+We will implement only a early stage of our infrastructure with this grant.
 
 The goal is to achive a fully functional mechanism for the random selection of the nodes in the fast blockchian and smooth communication between the two blockchains.
 
