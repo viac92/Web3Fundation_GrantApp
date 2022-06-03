@@ -15,7 +15,7 @@ The Datagen infrastructure requires the creation of a Substrate-based blockchain
 
 The Markets that the Datagen infrastructure want primarily to serve are: privacy friendly search engines and browsers, decentralized Web3 games and other additional ones (for example decentralizing the hardware layer of PoS blockchains, typically hosted on AWS and similar, etc…).
 
-What the Datagen infrastructure aims to be is basically a Web3 version of AWS, mostly for Web3 native applications (+privacy friendly search engines regardless if Web2 or Web3) that requires by nature low latency times and efficiency rates that previous designs of decentralized networks for in-chain computation didn’t allowed.
+What the Datagen infrastructure aims to be is basically a Web3 version of AWS, mostly for Web3 native applications (+privacy friendly search engines regardless if Web2 or Web3) that by nature require low latency times and efficiency rates that previous designs of decentralized networks for in-chain computation didn’t allow.
 
 B-Datagray team is really interested in creating this solution because we think that for the Web3 revolution to grow, and stay decentralized, is very important to go down to the backbones of the Web. B-Datagray team thinks that is a remarkable problem that most Web3 applications are still using AWS and similar centralized providers to run (if we go down to the hardware layer) and helping to diversify the array of solutions available to other Web3 project is a very inspiring goal for us.
 
