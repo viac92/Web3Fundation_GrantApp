@@ -2,7 +2,7 @@
 
 - **Project Name:** Datagen Project
 - **Team Name:** B-Datagray
-- **Payment Address:** 0x330330C5F676cec700CB30aF9E37D3012f525AeE - USDC
+- **Payment Address:** 0x330330C5F676cec700CB30aF9E37D3012f525AeE - Ethereum Network - USDC
 - **[Level](https://github.com/w3f/Grants-Program/tree/master#level_slider-levels):** 2
 
 ## Project Overview
