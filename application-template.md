@@ -32,8 +32,8 @@ While, what happens in this HB blockchain will be asynchronously and randomly ve
 We adopt the relativistic point of view of the data-flow from the user to explain the underlying process. 
 The user connects to the network (typically through the API of the application provider that is using the Datagen Infrastructure), than the user goes through the so called ECHO procedure: he/she sends a package of raw data to be processed by the network and the first validator that answers correctly to him/her is paired to the user on a one to one basis (this is the only PoW heavy-like process that is happening in the whole infrastructure and is done to pair any user with the most efficient validator to him/her, starting from the assumption that by geography and/or specific application in use and/or other factors not all the users and the same validators have the same latency time).
 
-The user is now paired to a specific validator (for a given amount of time -in the magnitude of some weeks-, after the user will send periodically other ECHOs, to allow to reassess the efficiency of the validators in the network). 
-The user (through the Application Provider’s API) sends raw data both the paired validator in the HB Datagen Blockchain and to the FB Polkadot’s (datagen) Parachain.
+The user is now paired to a specific validator (for a given amount of time -in the magnitude of some weeks-; after that given amount of time the user will send periodically other ECHOs, to allow to reassess the efficiency of the validators in the network). 
+The user (through the Application Provider’s API) sends raw data both to the paired validator in the HB Datagen Blockchain and to the FB Polkadot’s (datagen) Parachain.
 
 The validator in the FB blockchain must solve the raw computational request and turn it into a hash, within the blocktime, so, the hashed data must propagate in the whole FB blockchain, but there is no need for the raw data to be processed multiple times (like in a PoW) in the FB blockchain.
 
