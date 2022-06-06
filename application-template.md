@@ -13,7 +13,7 @@ B-Datagray’s Datagen project concerns the development of a decentralized infra
 
 The Datagen infrastructure requires the creation of a Substrate-based blockchain with some key features: low latency time, high efficiency (compatibly with the decentralized nature of the network), high degree of decentralization (higher than a traditional PoS would allow) of the physical hardware providing the cloud computing (therefore requiring a customized consensus protocol) and in-chain (or near-in-chain) computation (no off-chain based solutions). 
 
-The Datagen infrastructure primarily want to serve: privacy friendly search engines and browsers, decentralized Web3 games and other additional ones (for example decentralizing the hardware layer of PoS blockchains, typically hosted on AWS and similar, etc…).
+The Datagen infrastructure primarily want to serve: privacy friendly search engines and browsers, decentralized Web3 games and other ones (for example decentralizing the hardware layer of PoS blockchains, typically hosted on AWS and similar, etc…).
 
 What the Datagen infrastructure aims to be is basically a Web3 version of AWS, mostly for Web3 native applications (+privacy friendly search engines regardless if Web2 or Web3) that by nature require low latency times and efficiency rates that previous designs of decentralized networks for in-chain computation didn’t allow.
 
