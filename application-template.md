@@ -170,7 +170,7 @@ The goal is to achive a fully functional mechanism for the random selection of t
 
 ### Overview
 
-- **Total Estimated Duration:** 5 months
+- **Total Estimated Duration:** 5 months (starting date - August 2022)
 - **Full-Time Equivalent (FTE):**  2
 - **Total Costs:** 50,000 USD
 
