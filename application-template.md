@@ -27,7 +27,7 @@ Architecture: The infrastructure will rely on two main pillars: a fast and indep
 
 The actual cloud computing will happen in our FB Datagen (substrate based) blockchain. The reason for which we are having the cloud computing in an independent blockchain is that we need our blocktime to be lower than Polkadot’s / Kusama’s blocktime (ideally < 1sec when the infrastructure is ready) to be able to provide cloud computing to most Web3 gaming applications and privacy-friendly search engines. 
 
-While, what happens in this HB blockchain will be asynchronously and randomly verified in the Parachain.
+While, what happens in this HB will be asynchronously and randomly verified in the Parachain.
 
 We adopt the relativistic point of view of the data-flow from the user to explain the underlying process. 
 The user connects to the network (typically through the API of the application provider that is using the Datagen Infrastructure), than the user goes through the so called ECHO procedure: he/she sends a package of raw data to be processed by the network and the first validator that answers correctly to him/her is paired to the user on a one to one basis (this is the only PoW heavy-like process that is happening in the whole infrastructure and is done to pair any user with the most efficient validator to him/her, starting from the assumption that by geography and/or specific application in use and/or other factors not all the users and the same validators have the same latency time).
@@ -35,9 +35,9 @@ The user connects to the network (typically through the API of the application p
 The user is now paired to a specific validator (for a given amount of time -in the magnitude of some weeks-; after that given amount of time the user will send periodically other ECHOs, to allow to reassess the efficiency of the validators in the network). 
 The user (through the Application Provider’s API) sends raw data both to the paired validator in the HB Datagen Blockchain and to the FB Polkadot’s (datagen) Parachain.
 
-The validator in the FB blockchain must solve the raw computational request and turn it into a hash, within the blocktime, so, the hashed data must propagate in the whole FB blockchain, but there is no need for the raw data to be processed multiple times (like in a PoW) in the FB blockchain.
+The validator in the FB must solve the raw computational request and turn it into a hash, within the blocktime, so, the hashed data must propagate in the whole FB, but there is no need for the raw data to be processed multiple times (like in a PoW) in the FB.
 
-So, what is verifiably shared by the validators of the FB blockchain is the series of hashes and not the reiteration of the same computational process. The FB blockchain, as a whole, is so behaving more alike a PoS blockchain than a PoW.
+So, what is verifiably shared by the validators of the FB is the series of hashes and not the reiteration of the same computational process. The FB, as a whole, is so behaving more alike a PoS blockchain than a PoW.
 
 Since the blocktime of the Parachain is longer than the blocktime of the FB, both the raw data from the user and the hashed data from the validator are sent to the Parachain in an asynchronous way (typically it could be every 10 to 30 blocks of the FB). 
 The parachain is not re-computing all the raw and the hashed data, for the moment is just storing them in a verifiable way.
