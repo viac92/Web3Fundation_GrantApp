@@ -41,7 +41,7 @@ So, what is verifiably shared by the validators of the FB is the series of hashe
 
 Since the blocktime of the Parachain is longer than the blocktime of the FB, both the raw data from the user and the hashed data from the validator are sent to the Parachain in an asynchronous way (typically it could be every 10 to 30 blocks of the FB). 
 The parachain is not re-computing all the raw and the hashed data, for the moment is just storing them in a verifiable way.
-![datagen_deep_infrastructure_diagram](https://i.imgur.com/AAbO25j.png)
+![datagen_deep_infrastructure_diagram](https://i.imgur.com/w0obsru.png)
 
 **Example**: `raw data X` came from `user A`, resulting in `hash Y` from `validator A`. Randomly, the Parachain extracts some computational problems to be double-checked. For example, it can randomly extract `raw data X` for double-checking and entrust it to validator `B`, `C` and `D` (sending back the request to them in the FB). 
 `B`, `C` and `D` compute `X` again. Presuming that the majority of `B`, `C` and `D` (so at least two of them) are honest, the majority of them should compute `X` and obtain the same hash (`hash Z`). They send the hash back to the Parachain, and than compare the hashes. If for at least two validators (between `B`, `C` and `D`) `hash Z`  = `hash Y` (the same hash obtained by `validator A`), `validator A` is then presumed honest and can continue with its validating activity.
@@ -207,9 +207,10 @@ The goal is to achive a fully functional mechanism for the random selection of t
 | 0c. | Testing Guide | Core functions will be fully covered by unit tests to ensure functionality and robustness. In the guide, we will describe how to run these tests. |
 | 0d. | Docker | We will provide a Dockerfile(s) that can be used to test all the functionality delivered with this milestone. |
 | 0e. | Article | We will publish an **article** on Medium that explains how we are going to develop this step. |
-| 1. | RPC Method (Random Selector) | We will create a custom RPC method to get the result of the random selection of the nodes to the fast blockchain  |
+| 1. | RPC Method (Random Selector) | We will create a custom RPC method to get the result of the random selection of the nodes to the Fast Blockchain  |
 | 2. | RPC Method (Blockchain status) | We will implement a set of RPC methods to check the status of the two blockchains. (e.g. if a node on the fast blockchain is reliable) |
-| 3. | Setup the two blockchains | We will setup the two blockchains to test the communication and the `pallet_random_node_selector` |
+| 3. | Setup the two blockchains | We will setup the two blockchains to test the communication and the `pallet_random_node_selector` and `allet_check_node_computational_work`|
+|4.| Substrate pallet | We will create a `pallet_computational_work_testing` to test the checking process, this pallet provide a simple math problem to be solved by nodes. 
 
 
 ### Milestone 3 — Web Dapp
