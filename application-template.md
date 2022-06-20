@@ -177,9 +177,9 @@ The goal is to achive a fully functional mechanism for the random selection of t
 
 ### Milestone 1 — Implement the randomized substrate pallet `pallet_random_node_selector` and `pallet_check_node_computational_work`
 
-- **Estimated duration:** 1 month
+- **Estimated duration:** 1,5 month
 - **FTE:**  2
-- **Costs:** 9,000 USD
+- **Costs:** 12,000 USD
 
 | Number | Deliverable | Specification |
 | -----: | ----------- | ------------- |
@@ -188,17 +188,19 @@ The goal is to achive a fully functional mechanism for the random selection of t
 | 0c. | Testing Guide | Core functions will be fully covered by unit tests to ensure functionality and robustness. In the guide, we will describe how to run these tests. |
 | 0d. | Docker | We will provide a Dockerfile(s) that can be used to test all the functionality delivered with this milestone. |
 | 0e. | Article | We will publish an **article** on Medium that explains how we are going to develop the pallet. |
-| 1. | Substrate pallet | We will create a `pallet_random_node_selector` that implement the randomized selection of the nodes for the fast blockchain using the Substrate `Randomness` trait. This pallet run on the heavy blockchain. |
+| 1. | Substrate pallet | We will create a `pallet_random_node_selector` that implement the randomized selection of the nodes for the fast blockchain using the Substrate `Randomness` trait. This pallet run on the Heavy Blockchain. |
 |1a.| Functions | <ul><li>`reliable_node` update the list of the reliable nodes on the Heavy Blockchain.</li><li> `random_checker_node_selector` select 3 reliable random nodes in the fast blockchain to check the computational work.</li><li>`random_node_to_check` select a single random node to be check by the 3 checker nodes.</li></ul> 
-|2.| Substrate pallet| We will crate a `pallet_check_node_computational_work` that manage the check process on the Fast Blockchain.
-|2a.| Functions | <ul><li>`check_computational_work` take info from the Heavy Blockchain (from the `pallet_random_node_selector`) and check the computational work of the target node. At this moment the nodes will make a simple math calculations just to check the the mechanism.</li><li>`check_result` elaborate the result of the check process. If checked node has the same result of the majority of the checker nodes nothing happen. If the majority of the nodes have a different result from checked node this one will lose all his staked tokens (at this moment we only simulate the token lost) and checked node will be excluded from the Fast Blockchain.</li></ul><ul><li>`reliable_node` update the list of the reliable nodes on the Fast Blockchain.</li>
+|2.| Substrate pallet | We will create a `pallet_computational_work` that runs computational work on the fast nodes and pair them with their works.
+|2a.| Functions | <ul><li>`math_work_testing` this function will provide math problems to solve by Fast Blockahin nodes, just for testing.</li><li>`hash_work` function will hash the raw math problem and the elaborated result from the node and pair, comunicate to the Heavy Blockchain.</li></ul>
+|3.| Substrate pallet| We will crate a `pallet_check_node_computational_work` that manage the control process on the Fast Blockchain.
+|3a.| Functions | <ul><li>`check_computational_work` take info from the Heavy Blockchain (from the `pallet_random_node_selector`) and check the computational work of the target node. At this moment the nodes will make a simple math calculations just to check the the mechanism.</li><li>`check_result` elaborate the result of the check process. If checked node has the same result of the majority of the checker nodes nothing happen. If the majority of the nodes have a different result from checked node this one will lose all his staked tokens (at this moment we only simulate the token lost) and checked node will be excluded from the Fast Blockchain.<li>`reliable_node` update the list of the reliable nodes on the Fast Blockchain.</li></ul>
 
 
 ### Milestone 2 — Connecting the two blockchains
 
-- **Estimated Duration:** 2 months
+- **Estimated Duration:** 1,5 months
 - **FTE:**  2
-- **Costs:** 15,000 USD
+- **Costs:** 12,000 USD
 
 | Number | Deliverable | Specification |
 | -----: | ----------- | ------------- |
@@ -207,10 +209,10 @@ The goal is to achive a fully functional mechanism for the random selection of t
 | 0c. | Testing Guide | Core functions will be fully covered by unit tests to ensure functionality and robustness. In the guide, we will describe how to run these tests. |
 | 0d. | Docker | We will provide a Dockerfile(s) that can be used to test all the functionality delivered with this milestone. |
 | 0e. | Article | We will publish an **article** on Medium that explains how we are going to develop this step. |
-| 1. | RPC Method (Random Selector) | We will create a custom RPC method to get the result of the random selection of the nodes to the Fast Blockchain  |
-| 2. | RPC Method (Blockchain status) | We will implement a set of RPC methods to check the status of the two blockchains. (e.g. if a node on the fast blockchain is reliable) |
-| 3. | Setup the two blockchains | We will setup the two blockchains to test the communication and the `pallet_random_node_selector` and `allet_check_node_computational_work`|
-|4.| Substrate pallet | We will create a `pallet_computational_work_testing` to test the checking process, this pallet provide a simple math problem to be solved by nodes. 
+| 1. | RPC Method (Random Selector) | We will create a custom RPC method to get the result of the random selection of the nodes to the Fast Blockchain. We will implement comunication to get: <ul><li> Random node id to check and raw math problem (From HB to FB) </li><li>3 Random node id for the checkers and raw math problem (From HB to FB)</li></ul>|
+| 2. | RPC Method (Blockchain status) | We will implement a set of RPC methods to check the status of the two blockchains. <ul><li>Mapping of all nodes an their status (reliable or not reliable) sync from Heavy Blockchain.</li><li>Computetional works done and to be done</li></ul> |
+| 3. | Setup the two blockchains | We will setup the two blockchains to test the communications and `pallet_random_node_selector`, `pallet_check_node_computational_work` and `pallet_computational_work`.|
+
 
 
 ### Milestone 3 — Web Dapp
