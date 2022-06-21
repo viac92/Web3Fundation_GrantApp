@@ -211,7 +211,7 @@ The goal is to achive a fully functional mechanism for the random selection of t
 | 0e. | Article | We will publish an **article** on Medium that explains how we are going to develop this step. |
 | 1. | RPC Method (Random Selector) | We will create a custom RPC method to get the result of the random selection of the nodes to the Fast Blockchain. We will implement comunication to get: <ul><li> Random node id to check and raw math problem (From HB to FB) </li><li>3 Random node id for the checkers and raw math problem (From HB to FB)</li></ul>|
 | 2. | RPC Method (Blockchain status) | We will implement a set of RPC methods to check the status of the two blockchains. <ul><li>Mapping of all nodes an their status (reliable or not reliable) sync from Heavy Blockchain.</li><li>Computetional works done and to be done by FB (total and mapping for every fast node)</li></ul> |
-| 3. | Setup the two blockchains | We will setup the two blockchains to test the communications and `pallet_random_node_selector`, `pallet_check_node_computational_work` and `pallet_computational_work`.|
+| 3. | Setup the two blockchains | We will setup the two blockchains to deep test the communications and `pallet_random_node_selector`, `pallet_check_node_computational_work` and `pallet_computational_work`.|
 
 
 
