@@ -229,6 +229,12 @@ The goal is to achive a fully functional mechanism for the random selection of t
 | 0d. | Docker | We will provide a Dockerfile(s) that can be used to test all the functionality delivered with this milestone. |
 | 0e. | Article | We will publish an **article** on Medium that explains how we are going to develop this step. |
 | 1. | Web Dapp | We will create a web dapp to verify the functionality of the infrastructure, the GUI will display interactions between the two blockchains. |
+| 1a.| Dapp Mock-up| Download the mock-up of the dapp at [this link](https://drive.google.com/drive/folders/1SJRPbczZhRaXVLHnLvmp_XIeBtBBv0g-). |
+| 1b. | Home page | ![home page](https://i.imgur.com/oJecYBw.png) |
+| 1c. | Fast Blockchain - Block Page| ![FB Block](https://i.imgur.com/Oq6DFLu.png) |
+| 1d. | Heavy Blockchain - Block Page | ![HB Block](https://i.imgur.com/iJCc6nh.png) |
+| 1e. | Fast Blockchain - Node Page | ![FB Node](https://i.imgur.com/IaPz2A3.png) |
+| 1f. | Heavy Blockchain - Node Page | ![HB Node](https://i.imgur.com/IYEyVzA.png)|
 
 
 ## Future Plans
